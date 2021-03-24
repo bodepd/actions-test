@@ -15,6 +15,8 @@ jobs:
       - name: Maven Build
         run: mvn -B package --file initial/pom.xml
       - name: check generated m2 settings
-        run: cat /home/runner/.m2/settings.xml
+        run: |
+          cat /home/runner/.m2/settings.xml
+          export
       - name: Publish package
         run: mvn --batch-mode deploy --file initial/pom.xml
