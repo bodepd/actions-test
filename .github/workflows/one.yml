@@ -20,5 +20,5 @@ jobs:
           export
       - name: Publish package
         run: mvn --batch-mode deploy --file initial/pom.xml
-        evn:
+        env:
           GITHUB_TOKEN: ${{ github.token }}
