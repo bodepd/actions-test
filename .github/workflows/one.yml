@@ -14,7 +14,7 @@ jobs:
           java-version: 1.8
       - name: Maven Build
         run: mvn -B package --file initial/pom.xml
+      - name: check generated m2 settings
+        run: cat /home/runner/.m2/settings.xml
       - name: Publish package
         run: mvn --batch-mode deploy --file initial/pom.xml
-      - name: check local dir
-        run: ls -alrt
