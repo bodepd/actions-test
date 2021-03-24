@@ -15,4 +15,6 @@ jobs:
       - name: Maven Build
         run: mvn -B package --file initial/pom.xml
       - name: Publish package
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode deploy --file initial/pom.xml
+      - name: check local dir
+        run: ls -alrt
